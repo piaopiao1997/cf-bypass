@@ -2,9 +2,10 @@ from flask import Flask, request, Response
 import cloudscraper
 import os
 
-UPSTREAM = os.environ['TARGET_URL']
-scraper = cloudscraper.create_scraper()
+# 直接把你的上游地址写在这里
+UPSTREAM = 'https://muyuan.do'
 
+scraper = cloudscraper.create_scraper()
 app = Flask(__name__)
 
 @app.route('/<path:path>', methods=['GET','POST','PUT','DELETE','PATCH'])
